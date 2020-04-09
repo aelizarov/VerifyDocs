@@ -8,6 +8,7 @@ python-dotenv = "*"
 python-Levenshtein = "*"
 fuzzywuzzy = "*"
 passporteye = "*"
+requests = "*"
 
 [requires]
 python_version = "3.7"
