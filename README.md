@@ -1,5 +1,7 @@
 # VerifyDocs ID & NPI Checker
 
+This is a python script/flask app to verify physicians using their passport, DOB, and NPI number.
+
 # Setup
 
 ## Install Pipenv
