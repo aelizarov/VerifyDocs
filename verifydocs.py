@@ -120,7 +120,7 @@ def validate(url,npi,dob=None,url_type=True):
             veracity+=compare(npi_data['gender'],passport_data['gender'],exact=True)
         if passport_data.get('dob') and dob:
             truth+=1
-            veracity+=compare(npi_data['dob'],dob,exact=True)
+            veracity+=compare(passport_data['dob'],dob,exact=True)
         if truth > 1 and veracity/truth > .5:
             return {'valid':1,'payload':None}
         else:
