@@ -9,6 +9,7 @@ python-Levenshtein = "*"
 fuzzywuzzy = "*"
 passporteye = "*"
 requests = "*"
+flask = "*"
 
 [requires]
 python_version = "3.7"

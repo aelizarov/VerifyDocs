@@ -18,7 +18,11 @@ def hello_world():
     url = request.args.get('url')
     npi = request.args.get('npi')
     dob = request.args.get('dob')
-    url_mode = bool(int(request.args.get('mode')))
+    mode = request.args.get('mode')
+    if mode:
+    	url_mode = bool(int(mode))
+    else:
+    	url_mode = True
     validity = validate(url,npi,dob,url_mode)
     return jsonify(validity)
 
