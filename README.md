@@ -1,20 +1,20 @@
-#Getting Started
+# VerifyDocs ID & NPI Checker
 
-##If you don't have pipenv
+# Setup
+
+## Install Pipenv
 
 ```
 $ pip install pipenv
 ```
 
-##Setup
-
 ```
-$ pipenv
+$ pipenv --three
 $ pipenv shell
 $ pipenv install --skip-lock
 ```
 
-##To run the demo flask server
+## Run the Server
 
 ```
 $ python main.py
@@ -22,13 +22,13 @@ $ python main.py
 
 Format: http://127.0.0.1:5000/?url={URL}&npi={NPI}&dob={DOB}&mode={MODE}
 
-	URL - either a url to an image, a local uri, or byte-type.
-	NPI - a national provider identifier.
-	DOB (optional) - date of birth in the following format YYMMDD. Default None.
-	MODE - whether the 'URL' is a url or something else. Default True.
+    URL - either a url to an image, a local uri, or byte-type
+    NPI - a national provider identifier
+    DOB (optional) - date of birth in the following format YYMMDD. Default None
+    MODE - (int 1 or 0) whether the 'URL' is a url or something else
 
-##To use the package
+## Test CURL
 
-
-
-
+```
+curl --location --request GET 'http://127.0.0.1:5000/?url=https://answerdash-images.s3.amazonaws.com/1183/2163b3367a3c3d687ef68bba2b0b952c78f713e1/1528277944.perfect_20passport.jpg&npi=1427051077&dob=850117&mode=1'
+```

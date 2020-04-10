@@ -2,4 +2,5 @@
 .DS_Store
 *.jpg
 .ipynb_checkpoints/Untitled-checkpoint.ipynb
-__pycache__/verifydocs.cpython-37.pyc
+.mypy_cache
+__pycache__
