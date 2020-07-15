@@ -1,6 +1,6 @@
 from passporteye import read_mrz
 import requests
-from fuzzywuzzy import fuzz
+from rapidfuzz import fuzz
 
 
 def verify_npi(npi):
@@ -80,13 +80,13 @@ def validate_passport(url, force_flag=False, threshold=70, url_type=True):
 
 def compare(Str1, Str2, exact=False):
     if exact:
-        if Str1 == Str2:
-            return 1
-        else:
-            return 0
-    Ratio = fuzz.ratio(Str1.lower(), Str2.lower())
-    Partial_Ratio = fuzz.partial_ratio(Str2.lower(), Str1.lower())
-    if Ratio >= 70 or Partial_Ratio >= 70:
+        return Str1 == Str2
+
+    str1_lower = Str1.lower()
+    str2_lower = Str2.lower()
+    Ratio = fuzz.ratio(str1_lower, str2_lower, score_cutoff=70)
+    Partial_Ratio = fuzz.partial_ratio(str1_lower, str2_lower, score_cutoff=70)
+    if Ratio or Partial_Ratio:
         return 1
     else:
         return 0
